@@ -61,20 +61,25 @@ public class CreatingAndSchedulingSessionTest1 extends TestBase   {
 		groupCourseHompage.selectTime("10:00" , "PM");
 		groupCourseHompage.clicOnCreatButton();
 		//Assert the session
-		Boolean status= groupCourseHompage.displayStartSessionButton();
-		Assert.assertTrue(status);
+		Boolean status1= groupCourseHompage.displaySessionCard();
+		//On the classroom home screen assert that sessions card is shown on the timeline
+		Assert.assertTrue(status1);
+		//Assert the session details such as instructor name, session name, session time, upcoming status, etc
+		Boolean status2=groupCourseHompage.displaySessionName();
+		Assert.assertTrue(status2);
+		Boolean status3=groupCourseHompage.displaySessionTime();
+		Assert.assertTrue(status3);
+		Boolean status4=groupCourseHompage.displayInstructerName();
+		Assert.assertTrue(status4);
+		Boolean status5=groupCourseHompage.displayUpcommingstatus();
+		Assert.assertTrue(status5);
 	}
-/*
- * ● Assert the session
-○ On the classroom home screen assert that sessions card is shown on the
-timeline
-○ Assert the session details such as instructor name, session name, session
-time, upcoming status, etc
- * 
- */
 
-	
-	
+	@Test(priority = 3)
+	public void verify_LogOut_functionality() throws InterruptedException 
+	{
+		homepage.clickOnLogout();
+	}
 	
 	
 	

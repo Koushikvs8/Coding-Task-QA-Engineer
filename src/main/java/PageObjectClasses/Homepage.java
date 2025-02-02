@@ -19,6 +19,10 @@ public class Homepage extends BasePage {
 	WebElement instituteName;
 	@FindBy(xpath = "//span[normalize-space()='Group courses']")
 	WebElement groupCoursesLink;
+	@FindBy(xpath = "//span[@class='d-flex justify-space-between align-center']")
+	WebElement accountButton;
+	@FindBy(xpath = "//div[contains(text(),'Logout')]")
+	WebElement logOut;
 	
 	public boolean displayInstitutename() 
 	{  boolean status= instituteName.isDisplayed();
@@ -29,4 +33,9 @@ public class Homepage extends BasePage {
 	    Thread.sleep(1000);
 	}
 	
+	public void clickOnLogout() throws InterruptedException 
+	{   webUtil.click(accountButton);
+	    Thread.sleep(1000);
+	    webUtil.click(logOut);
+	}
 }

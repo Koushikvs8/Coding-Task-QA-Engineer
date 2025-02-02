@@ -41,6 +41,7 @@ public class GroupCousesHomePage extends BasePage {
 	WebElement timeInput;
 	@FindBy(xpath = "//div[@class='v-menu__content theme--light menuable__content__active v-autocomplete__content']")
 	WebElement timepickerScroll;
+	
 	WebElement schedulTime;
 	
 	@FindBy(xpath = "//div[text()='AM']")
@@ -53,15 +54,25 @@ public class GroupCousesHomePage extends BasePage {
 	
 	@FindBy(xpath = "//span[contains(text(),'Conflicts')]")
 	WebElement conflicts;
+	
 	@FindBy(xpath = "//span[contains(text(),'Resolve later')]")
 	WebElement resolvelaterButton;
+	
 	@FindBy(xpath = "//div[@class='timeline js-track']/child::div")
 	WebElement sessionCard;
 	
 	@FindBy(xpath = "//div[@class='timeline js-track']//div[@class='session-card border-radius--12 mb-4 cursor']/div/div[@class='text--18 font-weight--600 mb-2']")
-	WebElement instructerName;
-	//div[@id='679f5a6f33b3695bde9a8b5e']//div[normalize-space()='10:15 PM']
-	//div[@id='679f5a6f33b3695bde9a8b5e']//span[@class='v-chip__content'] //upc
+	WebElement sessionName ;
+	
+	@FindBy(xpath = "//div[@class='timeline js-track']//div[normalize-space()='10:00 PM']")
+	WebElement sessionTime;
+
+	@FindBy(xpath = "//div[@class='timeline js-track']//span[@class='v-chip__content']")
+	WebElement upcommingStatus;
+	
+	@FindBy(xpath = "//div[normalize-space()='Wise Tester']")
+	WebElement instructetNamee;
+	
 	public void clickOnAutomatedTestclassroom() throws InterruptedException
 	{
 		webUtil.click(AutomatedTestclassroom);
@@ -131,5 +142,26 @@ public class GroupCousesHomePage extends BasePage {
 	public boolean displaySessionCard() 
 	{
 		return webUtil.display(sessionCard);
+	}
+	
+	public boolean displayUpcommingstatus()
+	{
+		return webUtil.display(upcommingStatus);
+	}
+	
+	public boolean displaySessionTime()
+	{
+		
+		return webUtil.display(sessionTime);
+	}
+	public boolean displayInstructerName()
+	{
+		
+		return webUtil.display(instructetNamee);
+	}
+	public boolean displaySessionName()
+	{
+		
+		return webUtil.display(sessionName);
 	}
 }
