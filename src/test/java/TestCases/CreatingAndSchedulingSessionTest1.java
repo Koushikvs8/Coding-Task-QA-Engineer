@@ -1,5 +1,6 @@
 package TestCases;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -56,11 +57,21 @@ public class CreatingAndSchedulingSessionTest1 extends TestBase   {
 		groupCourseHompage.clickOnliveSessionsLink();
 		groupCourseHompage.clickOnscheduleSessionsButton();
 		groupCourseHompage.clickOnAddSession();
+		
 		groupCourseHompage.selectTime("10:00" , "PM");
-		
-		
+		groupCourseHompage.clicOnCreatButton();
+		//Assert the session
+		Boolean status= groupCourseHompage.displayStartSessionButton();
+		Assert.assertTrue(status);
 	}
-
+/*
+ * ● Assert the session
+○ On the classroom home screen assert that sessions card is shown on the
+timeline
+○ Assert the session details such as instructor name, session name, session
+time, upcoming status, etc
+ * 
+ */
 
 	
 	

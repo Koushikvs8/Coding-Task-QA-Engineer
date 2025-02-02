@@ -1,5 +1,6 @@
 package PageObjectClasses;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -34,6 +35,8 @@ public class GroupCousesHomePage extends BasePage {
 	//div[@class='v-menu__content theme--light menuable__content__active v-autocomplete__content']
 	//span[contains(text(),'Resolve later')]
 	//SchedulingSession
+	@FindBy(xpath = "//input[@id='input-811']")
+	WebElement sessionNameInput;
 	@FindBy(xpath = "//div[@role='combobox']//input")
 	WebElement timeInput;
 	@FindBy(xpath = "//div[@class='v-menu__content theme--light menuable__content__active v-autocomplete__content']")
@@ -48,6 +51,17 @@ public class GroupCousesHomePage extends BasePage {
 	@FindBy(xpath = "//span[normalize-space()='Create']")
 	WebElement creatButton;
 	
+	@FindBy(xpath = "//span[contains(text(),'Conflicts')]")
+	WebElement conflicts;
+	@FindBy(xpath = "//span[contains(text(),'Resolve later')]")
+	WebElement resolvelaterButton;
+	@FindBy(xpath = "//div[@class='timeline js-track']/child::div")
+	WebElement sessionCard;
+	
+	@FindBy(xpath = "//div[@class='timeline js-track']//div[@class='session-card border-radius--12 mb-4 cursor']/div/div[@class='text--18 font-weight--600 mb-2']")
+	WebElement instructerName;
+	//div[@id='679f5a6f33b3695bde9a8b5e']//div[normalize-space()='10:15 PM']
+	//div[@id='679f5a6f33b3695bde9a8b5e']//span[@class='v-chip__content'] //upc
 	public void clickOnAutomatedTestclassroom() throws InterruptedException
 	{
 		webUtil.click(AutomatedTestclassroom);
@@ -79,26 +93,43 @@ public class GroupCousesHomePage extends BasePage {
 	}
 
 	public void selectTime(String time ,String meridiem) throws InterruptedException
-	{   webUtil.click(timeInput);
+	{ 
 	    timeInput.clear();
-	    Thread.sleep(1000);
 	    webUtil.sendtextInput(timeInput, time);
-	    Thread.sleep(3000);
-		if(!meridiemAM.getText().equalsIgnoreCase(meridiem))
-				{
-			     webUtil.click(meridiemAM);
-				}
-		else
-		       {
-			    meridiemPM.click();
-		       }
+	    schedulTime =driver.findElement(By.xpath("//span[text()='"+time+"']"));
+	    webUtil.click(schedulTime);
+	    
+	    	if(meridiem.equalsIgnoreCase("PM"))
+			   {   Thread.sleep(1000);
+		            try {
+		            	resolvelaterButton.click();
+		            	if(meridiemPM.isDisplayed())
+			             {    // Thread.sleep(1000);
+			            	// webUtil.click(meridiemAM);
+			             }   
+					} catch (Exception e) {
+						// TODO: handle exception
+						System.out.println(e.getMessage());
+					} 
+			         
+			   }
+	else   {
+		Thread.sleep(1000);
+		webUtil.click(meridiemPM);
 		
-	
 	}
+	    }
+	    	 
 	
-	public void clicOnCreatButton() throws InterruptedException
+	public void clicOnCreatButton() 
 	{
 		webUtil.click(creatButton);
-		Thread.sleep(1000);
+	
+		
+	}
+	
+	public boolean displaySessionCard() 
+	{
+		return webUtil.display(sessionCard);
 	}
 }
