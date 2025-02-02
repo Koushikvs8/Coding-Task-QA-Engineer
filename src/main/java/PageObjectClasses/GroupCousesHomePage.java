@@ -31,16 +31,20 @@ public class GroupCousesHomePage extends BasePage {
 	@FindBy(xpath = "//span[normalize-space()='Add session']")
 	WebElement addSession;
 	//span[contains(text(),'Conflicts')]
-	
+	//div[@class='v-menu__content theme--light menuable__content__active v-autocomplete__content']
 	//span[contains(text(),'Resolve later')]
 	//SchedulingSession
 	@FindBy(xpath = "//div[@role='combobox']//input")
 	WebElement timeInput;
-	
+	@FindBy(xpath = "//div[@class='v-menu__content theme--light menuable__content__active v-autocomplete__content']")
+	WebElement timepickerScroll;
 	WebElement schedulTime;
 	
+	@FindBy(xpath = "//div[text()='AM']")
+	WebElement meridiemAM;
+	
 	@FindBy(xpath = "//div[text()='PM']")
-	WebElement meridiem;
+	WebElement meridiemPM;
 	@FindBy(xpath = "//span[normalize-space()='Create']")
 	WebElement creatButton;
 	
@@ -67,31 +71,29 @@ public class GroupCousesHomePage extends BasePage {
 		Thread.sleep(1000);
 	}
 	
+	
 	public void clickOnAddSession() throws InterruptedException
 	{
 		webUtil.click(addSession);
 		Thread.sleep(1000);
 	}
-	public void clickOnTimeInput() throws InterruptedException
-	{
-		webUtil.click(timeInput);
-		Thread.sleep(1000);
-	}
-	public void selectTime(String time) throws InterruptedException
-	{
-		
-		
-		//JavascriptExecutor js = (JavascriptExecutor) driver;
 
-		//js.executeScript("arguments[0].scrollIntoView(true);", schedulTime);
-  WebElement section = driver.findElement(By.xpath("//div[@class='v-menu__content theme--light menuable__content__active v-autocomplete__content']"));
-      
-       JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].style.setProperty('max-height', '4000vh', 'important');", section);
-        WebElement schedulTime= webUtil.getdriver().findElement(By.xpath("//div[contains(text(),'"+time+"')]"));
-        Thread.sleep(1000);
-        webUtil.click(schedulTime);
-		Thread.sleep(1000);
+	public void selectTime(String time ,String meridiem) throws InterruptedException
+	{   webUtil.click(timeInput);
+	    timeInput.clear();
+	    Thread.sleep(1000);
+	    webUtil.sendtextInput(timeInput, time);
+	    Thread.sleep(3000);
+		if(!meridiemAM.getText().equalsIgnoreCase(meridiem))
+				{
+			     webUtil.click(meridiemAM);
+				}
+		else
+		       {
+			    meridiemPM.click();
+		       }
+		
+	
 	}
 	
 	public void clicOnCreatButton() throws InterruptedException

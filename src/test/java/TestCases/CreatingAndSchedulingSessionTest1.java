@@ -56,8 +56,7 @@ public class CreatingAndSchedulingSessionTest1 extends TestBase   {
 		groupCourseHompage.clickOnliveSessionsLink();
 		groupCourseHompage.clickOnscheduleSessionsButton();
 		groupCourseHompage.clickOnAddSession();
-		groupCourseHompage.clickOnTimeInput();
-		groupCourseHompage.selectTime("2:30");
+		groupCourseHompage.selectTime("10:00" , "PM");
 		
 		
 	}
