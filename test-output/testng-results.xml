@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-02T20:58:05 IST" name="Suite" finished-at="2025-02-02T20:58:33 IST" duration-ms="28318">
+  <suite started-at="2025-02-03T14:42:22 IST" name="Suite" finished-at="2025-02-03T14:43:00 IST" duration-ms="37981">
     <groups>
     </groups>
-    <test started-at="2025-02-02T20:58:05 IST" name="Test" finished-at="2025-02-02T20:58:33 IST" duration-ms="28318">
+    <test started-at="2025-02-03T14:42:22 IST" name="Test" finished-at="2025-02-03T14:43:00 IST" duration-ms="37981">
       <class name="TestCases.CreatingAndSchedulingSessionTest1">
-        <test-method is-config="true" signature="webdriverManeger()[pri:0, instance:TestCases.CreatingAndSchedulingSessionTest1@53045c6c]" started-at="2025-02-02T20:58:05 IST" name="webdriverManeger" finished-at="2025-02-02T20:58:12 IST" duration-ms="6966" status="PASS">
+        <test-method is-config="true" signature="webdriverManeger()[pri:0, instance:TestCases.CreatingAndSchedulingSessionTest1@4b013c76]" started-at="2025-02-03T14:42:22 IST" name="webdriverManeger" finished-at="2025-02-03T14:42:29 IST" duration-ms="6168" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- webdriverManeger -->
-        <test-method signature="Perform_login_as_tutor()[pri:0, instance:TestCases.CreatingAndSchedulingSessionTest1@53045c6c]" started-at="2025-02-02T20:58:12 IST" name="Perform_login_as_tutor" finished-at="2025-02-02T20:58:21 IST" duration-ms="8548" status="PASS">
+        <test-method signature="Perform_login_as_tutor()[pri:0, instance:TestCases.CreatingAndSchedulingSessionTest1@4b013c76]" started-at="2025-02-03T14:42:29 IST" name="Perform_login_as_tutor" finished-at="2025-02-03T14:42:38 IST" duration-ms="9808" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Perform_login_as_tutor -->
-        <test-method signature="verify_opening_of_existing_class_functionality()[pri:1, instance:TestCases.CreatingAndSchedulingSessionTest1@53045c6c]" started-at="2025-02-02T20:58:21 IST" name="verify_opening_of_existing_class_functionality" finished-at="2025-02-02T20:58:25 IST" duration-ms="4699" status="PASS">
+        <test-method signature="verify_opening_of_existing_class_functionality()[pri:1, instance:TestCases.CreatingAndSchedulingSessionTest1@4b013c76]" started-at="2025-02-03T14:42:38 IST" name="verify_opening_of_existing_class_functionality" finished-at="2025-02-03T14:42:42 IST" duration-ms="3616" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_opening_of_existing_class_functionality -->
-        <test-method signature="verify_SchedulingSession_for_class_functionality()[pri:2, instance:TestCases.CreatingAndSchedulingSessionTest1@53045c6c]" started-at="2025-02-02T20:58:25 IST" name="verify_SchedulingSession_for_class_functionality" finished-at="2025-02-02T20:58:32 IST" duration-ms="6522" status="PASS">
+        <test-method signature="verify_SchedulingSession_for_class_functionality()[pri:2, instance:TestCases.CreatingAndSchedulingSessionTest1@4b013c76]" started-at="2025-02-03T14:42:42 IST" name="verify_SchedulingSession_for_class_functionality" finished-at="2025-02-03T14:42:59 IST" duration-ms="16900" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_SchedulingSession_for_class_functionality -->
-        <test-method signature="verify_LogOut_functionality()[pri:3, instance:TestCases.CreatingAndSchedulingSessionTest1@53045c6c]" started-at="2025-02-02T20:58:32 IST" name="verify_LogOut_functionality" finished-at="2025-02-02T20:58:33 IST" duration-ms="1378" status="PASS">
+        <test-method signature="verify_LogOut_functionality()[pri:3, instance:TestCases.CreatingAndSchedulingSessionTest1@4b013c76]" started-at="2025-02-03T14:42:59 IST" name="verify_LogOut_functionality" finished-at="2025-02-03T14:43:00 IST" duration-ms="1279" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_LogOut_functionality -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:TestCases.CreatingAndSchedulingSessionTest1@53045c6c]" started-at="2025-02-02T20:58:33 IST" name="teardown" finished-at="2025-02-02T20:58:33 IST" duration-ms="132" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:TestCases.CreatingAndSchedulingSessionTest1@4b013c76]" started-at="2025-02-03T14:43:00 IST" name="teardown" finished-at="2025-02-03T14:43:00 IST" duration-ms="132" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

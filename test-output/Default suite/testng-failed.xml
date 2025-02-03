@@ -5,8 +5,6 @@
     <classes>
       <class name="TestCases.CreatingAndSchedulingSessionTest1">
         <methods>
-          <include name="verify_opening_of_existing_class_functionality"/>
-          <include name="Perform_login_as_tutor"/>
           <include name="webdriverManeger"/>
           <include name="teardown"/>
           <include name="verify_SchedulingSession_for_class_functionality"/>
