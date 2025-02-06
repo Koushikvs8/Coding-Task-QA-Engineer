@@ -98,9 +98,10 @@ public class GroupCousesHomePage extends BasePage {
 	}
 
 	public void selectTime(String time, String meridiem) throws InterruptedException {
-
-		if (meridiem.equalsIgnoreCase("PM")) {
+   try {
+	   if (meridiem.equalsIgnoreCase("PM")) {
 			timeInput.click();
+			Thread.sleep(1000);
 			timeInput.clear();
 			webUtil.sendtextInput(timeInput, time);
 			schedulTime = driver.findElement(By.xpath("//span[text()='" + time + "']"));
@@ -108,18 +109,13 @@ public class GroupCousesHomePage extends BasePage {
 
 			Thread.sleep(1000);
 
-			try {
 
-				if (meridiemAM.isDisplayed()) {
+				if (webUtil.display(meridiemAM)) {
 
 					Thread.sleep(1000);
 					webUtil.click(meridiemAM);
 				}
-			} catch (NoSuchElementException e) {
-				// TODO: handle exception
-				System.out.println(e.getMessage() + "the state of meridiem is PM ");
-
-			}
+			
 
 		} else if (meridiem.equalsIgnoreCase("AM")) {
 			timeInput.click();
@@ -130,28 +126,27 @@ public class GroupCousesHomePage extends BasePage {
 
 			Thread.sleep(1000);
 			
-			Thread.sleep(1000);
-			try {
+		
+		
 				// resolvelaterButton.click();
 				if (meridiemPM.isDisplayed()) {
 					Thread.sleep(1000);
 					webUtil.click(meridiemPM);
 				}
-			} catch (NoSuchElementException e) {
-				// TODO: handle exception
-
-				System.out.println(e.getMessage() + "the state of meridiem is AM ");
-			}
+			
 
 		}
-		{
-
-		}
+} catch (NoSuchElementException e) {
+	// TODO: handle exception
+	System.out.println(e.getMessage());
+}
+		
+		
 	}
 
-	public void clicOnCreatButton() {
+	public void clicOnCreatButton() throws InterruptedException {
 		webUtil.click(creatButton);
-
+		Thread.sleep(1000);
 	}
 
 	public boolean displaySessionCard() {

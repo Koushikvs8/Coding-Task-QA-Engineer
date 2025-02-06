@@ -50,18 +50,16 @@ public class CreatingAndSchedulingSessionTest1 extends TestBase   {
 		}
 
 		@Test(priority = 2)
-		public void verify_SchedulingSession_for_class_functionality() throws InterruptedException {
+		public void verify_SchedulingSession_for_class_functionality() throws Exception  {
 			groupCourseHompage.clickOnliveSessionsLink();
 			groupCourseHompage.clickOnscheduleSessionsButton();
 			groupCourseHompage.clickOnAddSession();
-
-			try {
-				groupCourseHompage.selectTime("10:00", "PM");
-			} catch (NoSuchElementException e) {
+		
+				  groupCourseHompage.selectTime("10:00", "PM");
+			
 				// TODO: handle exception
-				System.out.println();
-			}
-
+			
+           
 			groupCourseHompage.clicOnCreatButton();
 			// Assert the session
 			Boolean status1 = groupCourseHompage.displaySessionCard();

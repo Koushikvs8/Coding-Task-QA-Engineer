@@ -3,6 +3,7 @@ package Utilities;
 import java.time.Duration;
 import java.util.Iterator;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +14,7 @@ import PageObjectClasses.BasePage;
 
 public class WebActionUtility   {
 	WebDriver driver;
-	public final static int WEBElEMENT_WAIT_Duration=10;
+	public final static int WEBElEMENT_WAIT_Duration=2;
 	
 	public WebActionUtility(WebDriver driver) {
 		this.driver=driver;
@@ -46,9 +47,16 @@ public class WebActionUtility   {
 		
 	}
 	public boolean display(WebElement element)
-	{  
+	{   boolean status=false;
+		
+		try {
+
 		WebElement Waitedwebelement=WaitByVisibility(element);
-		boolean status=Waitedwebelement.isDisplayed();
+		 status=Waitedwebelement.isDisplayed();
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+		
 		
 		return status;
 	}
